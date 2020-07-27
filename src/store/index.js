@@ -6,23 +6,32 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     datasets: [],
-    iplSessions: []
+    iplSeasons: []
   },
   mutations: {
     setDatasets(state, datasets) {
       state.datasets = datasets;
+    },
+    setIplSeasons(state, datasets) {
+      const seasonList = datasets.map(({ season }) => season);
+      state.iplSeasons = [...new Set(seasonList)].sort((cur, nxt) => nxt - cur);
+    }
+  },
+  getters: {
+    getDataBySeason: (state) => (seasonYear) => {
+      return state.datasets.filter(({ season }) => season === seasonYear);
     }
   },
   actions: {
-    fetchDatasets(store, url) {
-      Vue.http
-        .get(url)
-        .then((response) => {
-          store.commit('setDatasets', response.body);
-        })
-        .catch((error) => {
-          console.log(error.statusText);
-        });
+    async fetchDatasets(store, url) {
+      try {
+        const response = await fetch(url);
+        const resposeJson = await response.json();
+        store.commit('setDatasets', resposeJson);
+        store.commit('setIplSeasons', resposeJson);
+      } catch (error) {
+        console.log(error);
+      }
     }
   },
   modules: {}

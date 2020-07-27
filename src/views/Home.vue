@@ -12,6 +12,14 @@ export default {
   name: 'Home',
   components: {
     Dashboard
+  },
+  created() {
+    this.$store.dispatch('fetchDatasets', 'IPLData.json');
   }
 };
 </script>
+<style scoped>
+.home {
+  display: flex;
+}
+</style>
