@@ -4,4 +4,4 @@
   </div>
 </template>
 
-<style scoped src="./app.css"></style>
+<style lang="less" src="./app.less"></style>

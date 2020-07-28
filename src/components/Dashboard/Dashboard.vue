@@ -2,7 +2,7 @@
   <div class="dashboard">
     <div class="section-top"></div>
     <div class="section-bottom">
-      <div v-for="season in seasons" :key="season">{{ season }}</div>
+      <SeasonBar v-bind:seasons="seasons"></SeasonBar>
     </div>
   </div>
 </template>

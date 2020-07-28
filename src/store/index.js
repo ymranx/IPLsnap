@@ -12,14 +12,24 @@ export default new Vuex.Store({
     setDatasets(state, datasets) {
       state.datasets = datasets;
     },
-    setIplSeasons(state, datasets) {
-      const seasonList = datasets.map(({ season }) => season);
-      state.iplSeasons = [...new Set(seasonList)].sort((cur, nxt) => nxt - cur);
+    setIplSeasons(state, datasets = []) {
+      state.iplSeasons = datasets.reduce((result, elem) => {
+        const { season } = elem;
+        if (!result[season]) {
+          result[season] = [elem];
+        } else {
+          result[season].push(elem);
+        }
+        return result;
+      }, {});
     }
   },
   getters: {
     getDataBySeason: (state) => (seasonYear) => {
-      return state.datasets.filter(({ season }) => season === seasonYear);
+      return state.iplSeasons[seasonYear];
+    },
+    seasonYears: (state) => {
+      return Object.keys(state.iplSeasons).sort((cur, nxt) => nxt - cur);
     }
   },
   actions: {
