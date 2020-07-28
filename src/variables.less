@@ -1,0 +1,55 @@
+@black-1: #212124;
+@black-2: #373737;
+
+@gradient-0: radial-gradient(
+  circle farthest-corner at 10% 20%,
+  rgba(161, 255, 206, 1) 0%,
+  rgba(250, 255, 209, 1) 90%
+);
+
+@gradient-1: linear-gradient(
+  268deg,
+  rgba(255, 105, 180, 1) 4.1%,
+  rgba(255, 174, 215, 1) 74.3%
+);
+
+@gradient-2: linear-gradient(
+  178.5deg,
+  rgba(122, 231, 248, 1) 6.5%,
+  rgba(86, 118, 191, 1) 90.9%
+);
+
+@gradient-3: linear-gradient(
+  109.6deg,
+  rgba(232, 252, 252, 1) 11.2%,
+  rgba(252, 215, 134, 1) 56.2%,
+  rgba(247, 124, 124, 1) 100.2%
+);
+
+@gradient-4: linear-gradient(
+  109.6deg,
+  rgba(98, 210, 141, 0.88) 11.2%,
+  rgba(234, 245, 45, 0.79) 88%
+);
+
+@gradient-5: linear-gradient(
+  179deg,
+  rgba(255, 129, 27, 1) -27.5%,
+  rgba(245, 255, 56, 1) 94.7%
+);
+@gradient-6: linear-gradient(
+  88.8deg,
+  rgba(239, 171, 245, 1) 13.4%,
+  rgba(196, 181, 249, 1) 76.3%
+);
+
+@gradient-7: linear-gradient(
+  109.8deg,
+  rgba(250, 111, 152, 1) 5.6%,
+  rgba(255, 189, 55, 1) 91.5%
+);
+
+.gradient-variant(@variant) {
+  @color: 'gradient-@{variant}';
+  background: @@color;
+}

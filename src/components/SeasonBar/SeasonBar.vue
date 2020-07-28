@@ -1,6 +1,10 @@
 <template>
   <div class="season-bar">
-    <div class="season-pod" v-for="season in seasons" :key="season">
+    <div
+      v-bind:class="`season-pod pod-${(idx) % 7}`"
+      v-for="(season, idx) in seasons"
+      :key="season"
+    >
       <div class="season-text">{{season}}</div>
     </div>
   </div>

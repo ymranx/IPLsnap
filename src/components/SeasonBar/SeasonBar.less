@@ -1,12 +1,22 @@
+@import '../../variables.less';
+
 .season-bar {
   display: flex;
   .season-pod {
-    height: 185px;
+    height: 120px;
     width: 120px;
-    background-color: #373737;
     margin: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
   .season-text {
     color: #fff;
   }
+  @pods: 0, 1, 2, 3, 4, 5, 6, 7;
+
+each(@pods, {
+  .pod-@{value} {
+    .gradient-variant(@value);
+  }
+});
 }
