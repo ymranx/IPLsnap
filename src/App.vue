@@ -1,5 +1,6 @@
 <template>
   <div id="ipl-snap">
+    <div class="logo"></div>
     <router-view />
   </div>
 </template>

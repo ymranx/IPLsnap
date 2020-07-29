@@ -30,6 +30,19 @@ export default new Vuex.Store({
     },
     seasonYears: (state) => {
       return Object.keys(state.iplSeasons).sort((cur, nxt) => nxt - cur);
+    },
+    teams: (state) => {
+      return [...new Set(state.datasets.map(({ team1 }) => team1))];
+    },
+    venue: (state) => {
+      return [
+        ...new Set(
+          state.datasets.map(({ venue, city }) => ({
+            venue,
+            city
+          }))
+        )
+      ];
     }
   },
   actions: {

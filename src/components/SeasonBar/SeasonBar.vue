@@ -1,11 +1,13 @@
 <template>
   <div class="season-bar">
-    <div
-      v-bind:class="`season-pod pod-${(idx) % 7}`"
-      v-for="(season, idx) in seasons"
-      :key="season"
-    >
-      <div class="season-text">{{season}}</div>
+    <div class="season-pod" v-for="(season, idx) in seasons" :key="season">
+      <div v-bind:class="`season-text  pod-${(idx) % 7}`">
+        <span>{{ season }}</span>
+      </div>
+      <div class="matches">
+        <div class="matches-count">{{getByYear(season).length}}</div>
+        <div class="matches-text">Matches Played</div>
+      </div>
     </div>
   </div>
 </template>

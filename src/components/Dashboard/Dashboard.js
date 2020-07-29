@@ -5,12 +5,13 @@ export default {
   components: {
     SeasonBar
   },
-  created() {
-    //  console.log(this.$store.getters.getDataBySeason(2009));
-  },
+  created() {},
 
   computed: {
     seasons() {
+      return this.$store.getters.seasonYears;
+    },
+    seasonData() {
       return this.$store.getters.seasonYears;
     }
   }
