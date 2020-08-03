@@ -29,6 +29,7 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
   }
   .grid-header {
     .team-col,
@@ -61,6 +62,16 @@
     font-size: 22px;
     font-weight: bold;
     opacity: 0.7;
+  }
+  .bar-chart {
+    width: 90%;
+    height: 5px;
+    background-color: #434343;
+    .bar-index {
+      height: 100%;
+      transition: all 0.5s ease-out;
+      background-color: #f7817c;
+    }
   }
 @teams: sh, mi, gl, rps, rcb, kkr, dd, kxp, csk, rr, dc, ktk, pw ;
 

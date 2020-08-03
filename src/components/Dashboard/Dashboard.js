@@ -1,4 +1,3 @@
-// import { get } from 'lodash';
 import SeasonBar from '@/components/SeasonBar/SeasonBar.vue';
 import TeamView from '@/components/TeamView/TeamView.vue';
 

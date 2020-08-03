@@ -37,8 +37,8 @@
       </div>
     </div>
     <footer>
-      <a class="ico-github" href="https://www.github.com"></a>
-      <a class="ico-linkedin" href="www.github.com"></a>
+      <a class="ico-github" href="https://github.com/ymranx/IPLsnap"></a>
+      <a class="ico-linkedin" href="https://www.linkedin.com/in/imranlaskar/"></a>
     </footer>
   </div>
 </template>
