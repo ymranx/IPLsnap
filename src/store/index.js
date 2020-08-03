@@ -6,7 +6,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     datasets: [],
-    iplSeasons: []
+    iplSeasons: [],
+    selectedSeason: 'all'
   },
   mutations: {
     setDatasets(state, datasets) {
@@ -22,6 +23,9 @@ export default new Vuex.Store({
         }
         return result;
       }, {});
+    },
+    setSeason(state, season = 'all') {
+      state.selectedSeason = season;
     }
   },
   getters: {
@@ -35,14 +39,7 @@ export default new Vuex.Store({
       return [...new Set(state.datasets.map(({ team1 }) => team1))];
     },
     venue: (state) => {
-      return [
-        ...new Set(
-          state.datasets.map(({ venue, city }) => ({
-            venue,
-            city
-          }))
-        )
-      ];
+      return [...new Set(state.datasets.map(({ venue }) => venue))];
     }
   },
   actions: {

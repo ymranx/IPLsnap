@@ -11,6 +11,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/:season',
+    name: 'Home',
+    component: Home
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting
@@ -22,6 +27,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 });
 

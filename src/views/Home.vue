@@ -15,6 +15,12 @@ export default {
   },
   created() {
     this.$store.dispatch('fetchDatasets', 'IPLData.json');
+  },
+  watch: {
+    $route(to) {
+      const { season } = to.params;
+      this.$store.commit('setSeason', season === '/' ? 'all' : season);
+    }
   }
 };
 </script>

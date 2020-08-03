@@ -4,6 +4,13 @@
   display: flex;
   .season-pod {
     margin: 5px;
+    cursor: pointer;
+    &:hover {
+      >.season-text {
+        border-radius: 5px;
+        filter: hue-rotate(-45deg);
+      }
+    }
   }
   .season-text {
     color: @gray-1;
@@ -15,7 +22,14 @@
     align-items: center;
     justify-content: center;
     font-size: 35px;
+    transition: all 0.2s ease;
     color: rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  .selected-icon {
+    position: absolute;
+    bottom: 8px;
+    font-size: 26px;
   }
   .matches {
     display: flex;
