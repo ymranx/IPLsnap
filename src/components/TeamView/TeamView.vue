@@ -5,7 +5,7 @@
       <div class="col">Played</div>
       <div class="col">Won</div>
       <div class="col">Toss won</div>
-      <div class="col">Decided to</div>
+      <div class="col">Decided to bat</div>
     </div>
     <div class="grid-content">
       <div v-for="team in teamData" :key="team.team" class="grid-row">
@@ -19,8 +19,12 @@
         <div class="col">{{ team.won }}</div>
         <div class="col">{{ team.toss_won }}</div>
         <div class="col">
-          <div>bat {{ team.bat }} times</div>
-          <div>field {{ team.field }} times</div>
+          <div class="bar-chart">
+            <div
+              class="bar-index"
+              v-bind:style="{ width: `${(team.bat/ (team.bat + team.field)) * 100}` +'%' }"
+            ></div>
+          </div>
         </div>
       </div>
     </div>

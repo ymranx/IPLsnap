@@ -2,9 +2,7 @@
 export default {
   name: 'TeamView',
   props: ['teamData'],
-  created() {
-    // console.log(this.$store.getters.getDataBySeason(2009));
-  },
+  created() {},
 
   methods: {
     abbr(value) {
