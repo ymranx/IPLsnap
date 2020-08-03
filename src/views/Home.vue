@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Dashboard />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Dashboard from '@/components/Dashboard/Dashboard.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld
+    Dashboard
+  },
+  created() {
+    this.$store.dispatch('fetchDatasets', 'IPLData.json');
+  },
+  watch: {
+    $route(to) {
+      const { season } = to.params;
+      this.$store.commit('setSeason', season === '/' ? 'all' : season);
+    }
   }
 };
 </script>
+<style scoped>
+.home {
+  display: flex;
+}
+</style>

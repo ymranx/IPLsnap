@@ -1,0 +1,134 @@
+@black-1: #212124;
+@black-2: #373737;
+
+@gray-1: #6f6f6f;
+
+@kkr-color: linear-gradient(
+  45deg,
+  rgba(59, 38, 103, 0.545) 10%,
+  rgba(188, 120, 236, 0.757) 100%
+);
+@rcb-color: linear-gradient(
+  45deg,
+  rgba(243, 171, 0, 0.54) 10%,
+  rgba(249, 222, 140, 0.71) 100%
+);
+@csk-color: linear-gradient(
+  45deg,
+  rgba(248, 216, 0, 0.757) 10%,
+  rgba(253, 235, 113, 0.545) 100%
+);
+
+@kxp-color: linear-gradient(
+  45deg,
+  rgba(224, 17, 17, 0.545) 10%,
+  rgba(148, 90, 90, 0.757) 100%
+);
+
+@rr-color: linear-gradient(
+  45deg,
+  rgba(107, 115, 255, 0.545) 10%,
+  rgba(0, 13, 255, 0.757) 100%
+);
+@dd-color: linear-gradient(
+  45deg,
+  rgba(255, 41, 36, 0.54) 10%,
+  rgba(192, 40, 38, 0.78) 100%
+);
+@mi-color: linear-gradient(
+  45deg,
+  rgba(82, 229, 231, 0.545) 10%,
+  rgba(19, 12, 183, 0.757) 100%
+);
+
+@dc-color: linear-gradient(
+  45deg,
+  rgba(151, 171, 255, 0.545) 10%,
+  rgba(18, 53, 151, 0.757) 100%
+);
+
+@ktk-color: linear-gradient(
+  45deg,
+  rgba(255, 111, 216, 0.545) 10%,
+  rgba(56, 19, 194, 0.757) 100%
+);
+
+@pw-color: linear-gradient(
+  45deg,
+  rgba(189, 189, 189, 0.92) 10%,
+  rgba(0, 0, 0, 0.92) 100%
+);
+@sh-color: linear-gradient(
+  45deg,
+  rgba(253, 110, 106, 0.545) 10%,
+  rgba(255, 198, 0, 0.757) 100%
+);
+
+@rps-color: linear-gradient(
+  45deg,
+  rgba(255, 111, 216, 0.545) 10%,
+  rgba(56, 19, 194, 0.757) 100%
+);
+
+@gl-color: linear-gradient(
+  45deg,
+  rgba(252, 207, 49, 0.545) 10%,
+  rgba(245, 85, 85, 0.757) 100%
+);
+
+@gradient-0: radial-gradient(
+  circle farthest-corner at 10% 20%,
+  rgba(161, 255, 206, 1) 0%,
+  rgba(250, 255, 209, 1) 90%
+);
+
+@gradient-1: linear-gradient(
+  268deg,
+  rgba(255, 105, 180, 1) 4.1%,
+  rgba(255, 174, 215, 1) 74.3%
+);
+
+@gradient-2: linear-gradient(
+  178.5deg,
+  rgba(122, 231, 248, 1) 6.5%,
+  rgba(86, 118, 191, 1) 90.9%
+);
+
+@gradient-3: linear-gradient(
+  109.6deg,
+  rgba(232, 252, 252, 1) 11.2%,
+  rgba(252, 215, 134, 1) 56.2%,
+  rgba(247, 124, 124, 1) 100.2%
+);
+
+@gradient-4: linear-gradient(
+  109.6deg,
+  rgba(98, 210, 141, 0.88) 11.2%,
+  rgba(234, 245, 45, 0.79) 88%
+);
+
+@gradient-5: linear-gradient(
+  179deg,
+  rgba(255, 129, 27, 1) -27.5%,
+  rgba(245, 255, 56, 1) 94.7%
+);
+@gradient-6: linear-gradient(
+  88.8deg,
+  rgba(239, 171, 245, 1) 13.4%,
+  rgba(196, 181, 249, 1) 76.3%
+);
+
+@gradient-7: linear-gradient(
+  109.8deg,
+  rgba(250, 111, 152, 1) 5.6%,
+  rgba(255, 189, 55, 1) 91.5%
+);
+
+.gradient-variant(@variant) {
+  @color: 'gradient-@{variant}';
+  background: @@color;
+}
+.team-variant(@variant) {
+  @color: '@{variant}-color';
+  background: @@color;
+}

@@ -1,0 +1,73 @@
+@import '../../variables.less';
+@import '../../assets/teamsIcons.less';
+
+.team-view {
+  display: flex;
+  flex-direction: column;
+  .grid-header,
+  .grid-content {
+    display: flex;
+    background: #272727;
+  }
+  .grid-content {
+    flex-direction: column;
+  }
+  .grid-row {
+    display: flex;
+    flex: 1;
+  }
+  .team-col {
+    width: 260px;
+    margin: 1px 2px;
+    padding: 10px 5px;
+    background-color: #313131;
+  }
+  .col {
+    flex: 1;
+    margin: 1px 2px;
+    padding: 10px 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .grid-header {
+    .team-col,
+    .col {
+      font-size: 14px;
+      font-weight: 900;
+      background-color: #313131;
+    }
+  }
+  .team-pod {
+    height: 75px;
+    margin: -10px -5px;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .team-logo {
+    height: 100%;
+    overflow: hidden;
+    mix-blend-mode: lighten;
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .team-title {
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 0.7;
+  }
+@teams: sh, mi, gl, rps, rcb, kkr, dd, kxp, csk, rr, dc, ktk, pw ;
+
+each(@teams, {
+  .team-@{value} {
+    .team-variant(@value);
+  }
+});
+}
+
